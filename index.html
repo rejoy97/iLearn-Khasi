@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth | Register & Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js"></script>
 
+</head>
+<body>
+    <div class="container">
+        <h1>iLearn Khasi</h1>
+
+        <!-- Authentication Forms -->
+        <div id="auth-container">
+            <!-- Login Form -->
+            <div id="login-form" class="form">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button id="login-button">Login</button>
+                <p class="recover"><a href="#">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+                
+                <!-- Social Login -->
+                <div class="social-login">
+                    <p>Or sign in with:</p>
+                    <button id="google-login" class="social-btn"><i class="fab fa-google"></i> Google</button>
+                    <button id="facebook-login" class="social-btn"><i class="fab fa-facebook"></i> Facebook</button>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="form hidden">
+                <h2>Register</h2>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="first-name" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="register-password" placeholder="Password" required>
+                </div>
+                <button id="register-button">Register</button>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <button id="logout-button" class="hidden">Logout</button>
+
+        <!-- User Info -->
+        <div id="user-info" class="hidden"></div>
+    </div>
+
+    <!-- Firebase Configuration & Authentication Scripts -->
+    
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
